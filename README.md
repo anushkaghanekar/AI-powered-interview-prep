@@ -2,14 +2,14 @@
 AI Powered Interview Prep - An interview preparation website with user authentication and personalized AI-driven practice questions to help users prepare effectively for their job interviews
 
 
-# Features
-User authenication<br>
-AI generated interview questions<br>
-User Tracking<br>
-Web friendly UI<br>
+💻# Features
+🔐User authenication<br>
+🤖AI generated interview questions<br>
+📊User Tracking<br>
+🌐Web friendly UI<br>
 
 
-# Tech Stcak
+🎯# Tech Stcak
 Frontend :- HTML, CSS, React.js<br>
 Backend  :- Express.js, Node. js<br>
 Database :- MongoDB<br>
