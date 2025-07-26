@@ -9,7 +9,7 @@ import InterviewPrep from './pages/InterviewPrep/InterviewPrep';
 
 const App = () => {
   return (
-    <div>
+    <div className="w-full min-h-screen bg-[#FFFCEF]">
       <Router>
         <Routes>
           { /* Default Route */ }
@@ -21,14 +21,14 @@ const App = () => {
         </Routes>
       </Router>
 
-      <Toaster>
+      <Toaster
       toastOptions={{
         className: "",
         style: {
           fontSize: "13px",
         },
       }}
-      </Toaster>
+      />
     </div>
   )
 }
