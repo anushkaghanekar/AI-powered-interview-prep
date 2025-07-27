@@ -16,9 +16,9 @@ const LandingPage = () => {
   return (
     <>
     <div className="w-full min-h-full bg-[#FFFCEF]">  {/* Blurred Background */}
-      <div className="w-full h-full bg-amber-200/20 blur-[-9px] absolute top-0 left-0">  {/* Main Content */}
+      <div className="w-full h-full bg-amber-200/20">  {/* Main Content */}
         
-        <div className="container mx-auto px-4 pt-6 pb-[200px] relative z-10">
+        <div className="container mx-auto px-4 pt-6 pb-4 relative z-10">
           { /* Header */ }
           <header className="flex justify-between items-center mb-17">
             <div className="text-2xl text-black font-bold">
@@ -66,13 +66,9 @@ const LandingPage = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-     <div className="w-full min-h-full relative z-11 mb-56">
+          <div className="w-full min-h-full relative z-11 mt-4">
       <div>
-        <section className="flex items-center justify-center mt-100 mb-100">
+        <section className="flex items-center justify-center mt-11 mb-4">
           <img
             src={HERO_IMG}
             alt="Hero Image"
@@ -80,8 +76,12 @@ const LandingPage = () => {
             />
         </section>
       </div>
+        </div>
+      </div>
+    </div>
 
-      <div className="w-full min-h-full bg-[#FFFCEF] mt-11">
+     
+      <div className="w-full min-h-full bg-[#FFFCEF] mt-4">
         <div className="container mx-auto px-4 pt-10 pb-20">
           <section className="mt-4">
             <h2 className="text-2xl font-medium text-center mb-12">
