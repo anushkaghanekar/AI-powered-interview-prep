@@ -15,8 +15,8 @@ const LandingPage = () => {
 
   return (
     <>
-    <div className="w-full min-h-full bg-[#FFFCEF]">  {/* Blurred Background */}
-      <div className="w-full h-full bg-amber-200/20">  {/* Main Content */}
+    <div className="w-full min-h-full bg-[#ddcc98]">  {/* Blurred Background */}
+      <div className="w-full h-full bg-gradient-to-b from-[#f4ebd5] via-[#e9dba2] to-[#ddcc89]">  {/* Main Content */}
         
         <div className="container mx-auto px-4 pt-6 pb-4 relative z-10">
           { /* Header */ }
@@ -25,7 +25,7 @@ const LandingPage = () => {
               Interview Prep AI 
             </div>
               <button
-                className="bg-linear-to-r from-[#FF9324] to-[#e99a4b] text-sm font-semibold text-white px-9 py-4.5 rounded-full hover:bg-black hover:text-white border border-white transition-colors cursor-pointer"
+                className="text-sm font-semibold px-9 py-4.5 rounded-full bg-red-900 bg-opacity-40 text-white border border-white border-opacity-40 hover:bg-opacity-90 hover:border-opacity-90 hover:text-white transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-900"
                 onClick={() => setOpenAuthModal(true)}
               >
                 Login / Sign Up
@@ -36,14 +36,14 @@ const LandingPage = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="w-full md:w-1/2 pr-4 mb-8 md:mb-0">
               <div className="flex items-center justify-left md-2">
-                <div className="flex items-center gap-2 text-[13px] text-amber-600 font-semibold bg-amber-100 px-3 py-1 rounded-full border border-amber-400">
+                <div className="flex items-center gap-2 text-[13px] text-[#3D348B] font-semibold bg-[#FBBE72] px-3 py-1 rounded-full border border-[#F7D488]">
                   <LuSparkles /> AI Powered
                 </div>
               </div>
 
-              <h1 className="text-4xl text-black font-medium mb-6 leading-tight">
+              <h1 className="text-4xl text-black font-semibold mb-6 leading-tight">
                 Ace Interviews with <br />
-                <span className="text-transparent bg-clip-text bg-[radial-gradient(circle,_#FF9324_0%,_#FCD760__100%)] bg-[length:200%_200%] animate-text-shine font-semibold">
+                <span className="text-transparent bg-clip-text bg-[radial-gradient(circle,_brown_0%,_red__100%)] bg-[length:200%_200%] animate-text-shine font-semibold">
                   AI-Powered
                 </span>{" "}
                 Learning
@@ -81,7 +81,7 @@ const LandingPage = () => {
     </div>
 
      
-      <div className="w-full min-h-full bg-[#FFFCEF] mt-4">
+      <div className="w-full min-h-full bg-[#eae4ca] mt-4">
         <div className="container mx-auto px-4 pt-10 pb-20">
           <section className="mt-4">
             <h2 className="text-2xl font-medium text-center mb-12">
@@ -94,7 +94,7 @@ const LandingPage = () => {
                 { APP_FEATURES.slice(0, 3).map((feature) => (
                   <div
                     key={feature.id}
-                    className="bg-[#FFFEF8] p-9 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100"
+                    className="bg-[#FFF9F4] p-9 rounded-xl shadow-xs hover:shadow-lg shadow-[#F7D488] transition border border-[#F7D488]"
                   >
                     <h3 className="text-base font-semibold mb-4">
                       {feature.title}
@@ -109,7 +109,7 @@ const LandingPage = () => {
                 { APP_FEATURES.slice(3).map((feature) => (
                   <div
                     key={feature.id}
-                    className="bg-[#FFFEF8] p-9 rounded-xl shadow-xs hover:shadow-lg shadow-amber-100 transition border border-amber-100"
+                    className="bg-[#FFF9F4] p-9 rounded-xl shadow-xs hover:shadow-lg shadow-[#F7D488] transition border border-[#F7D488]"
                   >
                     <h3 className="text-base font-semibold mb-4">
                       {feature.title}
@@ -123,7 +123,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="text-sm bg-[#FFFEF8] text-secondary text-center p-4 mt-4">
+      <div className="text-sm bg-[#FFFEF4] text-secondary text-center p-4 mt-4">
         💻Built with happy coding for smarter faster interview success🎯
       </div>
      </div>
