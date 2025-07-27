@@ -9,7 +9,7 @@ import InterviewPrep from './pages/InterviewPrep/InterviewPrep';
 
 const App = () => {
   return (
-    <div className="w-full min-h-screen bg-[#FFFCEF]">
+    <div>
       <Router>
         <Routes>
           { /* Default Route */ }
