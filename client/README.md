@@ -1,3 +1,6 @@
+# Client
+
+This folder contains the frontend code of the AI-Powered Interview Prep App.
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
