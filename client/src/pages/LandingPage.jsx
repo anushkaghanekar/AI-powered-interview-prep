@@ -51,7 +51,7 @@ const LandingPage = () => {
             </div>
 
             <div className="w-full md:w-1/2">
-              <p className="text-[17px] text-gray-900 mr-0 md:mr-20 mb-9">
+              <p className="text-[17px] text-gray-900 font-semibold mr-0 md:mr-20 mb-9">
                 Get role-specific questions, expand answers when you need them,
                 dive deeper into concepts, and organize everything your way.
                 From preparation to mastery - your ultimate interview toolkit is 
@@ -84,8 +84,8 @@ const LandingPage = () => {
       <div className="w-full min-h-full bg-[#eae4ca] mt-4">
         <div className="container mx-auto px-4 pt-10 pb-20">
           <section className="mt-4">
-            <h2 className="text-2xl font-medium text-center mb-12">
-              Features That Make You Shine
+            <h2 className="text-amber-900 text-2xl font-medium text-center mb-12">
+              Shine With Smart Tool
             </h2>
 
             <div className="flex flex-col items-center gap-9">
