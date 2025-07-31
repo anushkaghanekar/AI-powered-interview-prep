@@ -2,16 +2,23 @@ import React, { useState } from 'react';
 
 import HERO_IMG from "../assets/hero-img.png";
 import { APP_FEATURES } from "../utils/data";
-//import { useNavigate } from 'react-router-dom';
-import { LuSparkles } from 'react-icons/lu'
+import { useNavigate } from 'react-router-dom';
+import { LuSparkles } from 'react-icons/lu';
+import Modal from "../components/Modal";
+import Login from "./Auth/Login";
+import SignUp from "./Auth/SignUp";
+
+console.log("🚀 what to do next");
 
 const LandingPage = () => {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  const [_openAuthModal, setOpenAuthModal] = useState(false);
-  //const [currentPage, setCurrentPage] = useState("login");
+  const [openAuthModal, setOpenAuthModal] = useState(false);
+  const [currentPage, setCurrentPage] = useState("login");
 
   const handleCTA = () => {};
+  console.log("Modal open?", openAuthModal);
+
 
   return (
     <>
@@ -127,8 +134,29 @@ const LandingPage = () => {
         💻Built with happy coding for smarter faster interview success🎯
       </div>
      </div>
+
+      <Modal
+          isOpen={openAuthModal}
+          onClose={() => {
+            setOpenAuthModal(false);
+            setCurrentPage("login");
+          }}
+          hideHeader
+        >
+          <div>
+            {currentPage === "login" && (
+              <Login setCurrentPage={setCurrentPage} />
+            )}
+            {currentPage === "signup" && (
+              <SignUp setCurrentPage={setCurrentPage} /> 
+            )}
+          </div>
+        </Modal>
     </>
   );
 };
 
-export default LandingPage
+export default LandingPage;
+
+
+
