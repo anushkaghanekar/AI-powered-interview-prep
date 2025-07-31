@@ -15,9 +15,9 @@ const Login = ({ setCurrentPage }) => {
     e.preventDefault();
   };
 
-  return ( <div className="w-[90vw] md:w-[33vw] p-7 flex flex-col justify-center">
+  return ( <div className="w-[90vw] md:w-[33vw] p-9 flex flex-col justify-center">
     <h3 className="text-lg font-semibold text-black">Welcome Back</h3>
-    <p className="text-xs text-slate-900 mt-[4px] mb-6">
+    <p className="text-xs text-slate-900 mt-[4px] mb-9">
       Please enter your details to log in
     </p>
 
@@ -37,30 +37,30 @@ const Login = ({ setCurrentPage }) => {
         placeholder="Min 8 Characters"
         type="password"
       />
+
+      {error && <p className="text-red-400 text-xs pb-2.9">{error}</p>}
+
+      <button type="submit" className="btn-primary">
+        LOGIN
+      </button>
+
+      <p className="text-[13px] text-slate-900 mt-4">
+        Don't have an account?{""}
+        <button
+          className="font-medium text-primary underline cursor-pointer"
+          onClick={() => {
+            setCurrentPage("signup");
+          }}
+        >
+          SignUp
+        </button>
+      </p>
     </form>
   </div>
   );
 };
 
 export default Login;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
