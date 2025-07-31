@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
-console.log("🔐 Login component mounted");
-
+console.log("🔐 To Login component mounted");
 
 const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
@@ -44,3 +43,55 @@ const Login = ({ setCurrentPage }) => {
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,7 +16,7 @@ const Input = ({ value, onChange, label, placeholder, type }) => {
             type == "password" ? (showPassword ? "text" : "password") : type
           }
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none"
+          className="w-full bg-white outline-none border border-gray-900 focus:border-orange-900 focus:ring-1 focus:ring-orange-900 rounded-md px-3 py-2 transition-all duration-400"
           value={value}
           onChange={(e) => onChange(e)}
           />
@@ -43,55 +43,3 @@ const Input = ({ value, onChange, label, placeholder, type }) => {
 };
 
 export default Input;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
