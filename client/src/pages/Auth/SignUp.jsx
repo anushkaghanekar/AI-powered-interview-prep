@@ -49,7 +49,8 @@ const SignUp = ({setCurrentPage}) => {
     }
   };
 
-  return <div className="w-[90vw] md:w-[33vw] p-9 flex flex-col justify-center">
+  return <div className="w-full max-w-md px-6 py-9 flex flex-col justify-center">
+
     <h3 className="text-lg font-semibold text-black">Create an Account</h3>
     <p className="text-xs text-slate-900 mt-[4px] mb-9">
       Join us today by entering your details the below
@@ -91,17 +92,18 @@ const SignUp = ({setCurrentPage}) => {
         SIGN UP
       </button>
 
-      <p className="texxt-[13px] text-slate-900 mt-4">
-        Already an account?{" "}
-        <button
-          className="font-medium text-primary underline cursor-pointer"
-          onClick={() => {
-            setCurrentPage("login");
-          }}
-        >
-          Login
-        </button>
-      </p>
+      <p className="text-sm text-slate-900 mt-4 flex items-center gap-1">
+  Already have an account?
+  <button
+    className="font-medium text-primary underline cursor-pointer"
+    onClick={() => {
+      setCurrentPage("login");
+    }}
+  >
+    Login
+  </button>
+</p>
+
     </form>
   </div>
 };
