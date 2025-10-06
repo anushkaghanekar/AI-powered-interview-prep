@@ -40,16 +40,16 @@ Open a terminal and run:
 git clone https://github.com/anushkaghanekar/AI-powered-interview-prep.git
 cd "AI-powered-interview-prep"
 
-3.Setup backend (server)
-cs server
-npm install # install dependencies if node_modules is missing
+3.Setup backend (server) <br>
+cs server <br>
+npm install # install dependencies if node_modules is missing<br>
 npm run dev # start backend server
 
-4. Setup frontend (client)
-   cd ../client
-   npm install # install dependencies if node_modules is missing
+4. Setup frontend (client)<br>
+   cd ../client <br>
+   npm install # install dependencies if node_modules is missing <br>
    npm run dev # start frontend server
 
-5. Verify
-   ◽Both frontend and backend are running without errors.
+5. Verify <br>
+   ◽Both frontend and backend are running without errors. <br>
    ◽Test any functionality that communicates with the backend.
