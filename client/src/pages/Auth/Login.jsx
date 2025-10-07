@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
 import { validateEmail } from "../../utils/helper";
 console.log("🔐 To Login component mounted");
@@ -8,8 +8,7 @@ const Login = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   //Handle Login Form Submit
   const handleLogin = async (e) => {
@@ -29,7 +28,7 @@ const Login = ({ setCurrentPage }) => {
 
     { /* Login API Call */ }
     try {
-      
+  
     } catch (error) {
       if (error.response && error.response.data.message) {
         setError(error.response.data.message);
@@ -39,8 +38,8 @@ const Login = ({ setCurrentPage }) => {
     }
   };
 
-  return ( <div className="w-full max-w-md mx-auto px-6 py-9 flex flex-col justify-center">
-
+  return ( 
+  <div className="w-full max-w-md mx-auto px-6 py-9 flex flex-col justify-center">
     <h3 className="text-lg font-semibold text-black">Welcome Back</h3>
     <p className="text-xs text-slate-900 mt-[4px] mb-9">
       Please enter your details to log in
