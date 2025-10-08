@@ -13,6 +13,7 @@ const ProfileInfoCard = () => {
   };
 
   return (
+  user && (
     <div className="flex items-center">
         <img
           src={user.profileImageUrl}
@@ -34,9 +35,55 @@ const ProfileInfoCard = () => {
         </div>
     </div>
   )
-}
+ );
+};
 
 export default ProfileInfoCard
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
