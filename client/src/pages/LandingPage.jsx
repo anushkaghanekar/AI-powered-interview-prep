@@ -7,16 +7,26 @@ import { LuSparkles } from 'react-icons/lu';
 import Modal from "../components/Modal";
 import Login from "./Auth/Login";
 import SignUp from "./Auth/SignUp";
+import { useContext } from "react";
+import { UserContext } from "../context/userContext";
+import ProfileInfoCard from "../components/Cards/ProfileInfoCard";
 
 console.log("🚀 what to do next");
 
 const LandingPage = () => {
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [currentPage, setCurrentPage] = useState("login");
 
-  const handleCTA = () => {};
+  const handleCTA = () => {
+    if (!user) {
+      setOpenAuthModal(true); 
+    } else {
+      navigate("/dashboard");
+    }
+  };
   console.log("Modal open?", openAuthModal);
 
 
@@ -31,12 +41,16 @@ const LandingPage = () => {
             <div className="text-2xl text-black font-bold">
               Interview Prep AI 
             </div>
+            {user ? (
+              <ProfileInfoCard /> 
+            ) : (
               <button
                 className="text-sm font-semibold px-9 py-4.5 rounded-full bg-red-900 bg-opacity-40 text-white border border-white border-opacity-40 hover:bg-opacity-90 hover:border-opacity-90 hover:text-white transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-red-900"
                 onClick={() => setOpenAuthModal(true)}
               >
                 Login / Sign Up
-              </button>
+              </button> 
+            )}
           </header>
 
           { /* Hero Content */ }
