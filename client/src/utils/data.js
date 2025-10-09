@@ -45,7 +45,7 @@ export const APP_FEATURES = [
             "Easily save your interview sets, organize them neatly in your dashboard, and pick up your preparation right where you stay.",
     },
     {
-        id: "09",
+        id: "06",
         title: "Quick Flashcards for Review",
         description:
             "Use AI-generated flashcards to quickly review key concepts, terms, and frameworks before any interview.",
