@@ -1,4 +1,16 @@
+export const CARD_BG = [
+    { id: 1, bgcolor: "linear-gradient(135deg, #FFBEC8 0%, #FDDDE6 100%)" },
+    { id: 2, bgcolor: "linear-gradient(135deg, #82B7FE 0%, #B7E5FF 100%)" },
+    { id: 3, bgcolor: "linear-gradient(135deg, #FFA44C 0%, #F9D69E 100%)" },
+    { id: 4, bgcolor: "linear-gradient(135deg, #3E8984 0%, #A6E3D1 100%)" },
+    { id: 5, bgcolor: "linear-gradient(135deg, #CB82B2 0%, #DFB1D5 100%)" },
+    { id: 6, bgcolor: "linear-gradient(135deg, #CD5C5C 0%, #F08080 100%)" },
+    { id: 7, bgcolor: "linear-gradient(135deg, #2994C1 0%, #B4E9FF 100%)" },
+    { id: 8, bgcolor: "linear-gradient(135deg, #948C0B 0%, #ECECE4 100%)" },
+    { id: 9, bgcolor: "linear-gradient(135deg, #E2B4BB 0%, #FFFAF3 100%)" },
+    { id: 10, bgcolor: "linear-gradient(135deg, #98AB59 0%, #E9E8E4 100%)" },
 
+];
 
 
 export const APP_FEATURES = [
@@ -33,15 +45,15 @@ export const APP_FEATURES = [
             "Easily save your interview sets, organize them neatly in your dashboard, and pick up your preparation right where you stay.",
     },
     {
-    id: "09",
-    title: "Quick Flashcards for Review",
-    description:
-        "Use AI-generated flashcards to quickly review key concepts, terms, and frameworks before any interview.",
-},
+        id: "09",
+        title: "Quick Flashcards for Review",
+        description:
+            "Use AI-generated flashcards to quickly review key concepts, terms, and frameworks before any interview.",
+    },
 ];
 
 
-    
+
 
 
 
