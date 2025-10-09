@@ -30,26 +30,32 @@ npm -v
 
 ◽Git
 Check installation:
-
 git --version
 
-2.Clone the Repository
-
-Open a terminal and run:
-
-git clone https://github.com/anushkaghanekar/AI-powered-interview-prep.git
-cd "AI-powered-interview-prep"
-
-3.Setup backend (server) <br>
+2.Setup backend (server) <br>
 cs server <br>
 npm install # install dependencies if node_modules is missing<br>
 npm run dev # start backend server
 
-4. Setup frontend (client)<br>
+3. Setup frontend (client)<br>
    cd ../client <br>
    npm install # install dependencies if node_modules is missing <br>
    npm run dev # start frontend server
 
-5. Verify <br>
+4. Verify <br>
    ◽Both frontend and backend are running without errors. <br>
    ◽Test any functionality that communicates with the backend.
+
+Usage 
+
+Sign Up / Log In – Create an account or log in securely using JWT.
+
+Access Dashboard – View your progress, topics, and recent activities.
+
+Start Interview – Select topic and difficulty to begin AI-powered Q&A.
+
+Get Feedback – Receive instant AI responses and improvement tips.
+
+Track Performance – Analyze results through charts and reports.
+
+Logout – End your session safely and return anytime to continue.
