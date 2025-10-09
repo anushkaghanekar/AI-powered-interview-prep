@@ -18,7 +18,7 @@ AI Integration :- Google Gemini API<br>
 
 Smart AI based tool to improve interview prep and job efficiency.
 
-INSTALLATION AND SETUP
+INSTALLATION AND SETUP <br>
 1.Prerequisites
 
 Before running the project, make sure you have installed:
@@ -37,25 +37,24 @@ cs server <br>
 npm install # install dependencies if node_modules is missing<br>
 npm run dev # start backend server
 
-3. Setup frontend (client)<br>
+3.Setup frontend (client)<br>
    cd ../client <br>
    npm install # install dependencies if node_modules is missing <br>
    npm run dev # start frontend server
 
-4. Verify <br>
+4.Verify <br>
    ◽Both frontend and backend are running without errors. <br>
    ◽Test any functionality that communicates with the backend.
 
 Usage 
+🔐 User Authentication – Sign up or log in securely.
 
-Sign Up / Log In – Create an account or log in securely using JWT.
+🤖 AI Interviews – Answer AI-generated questions.
 
-Access Dashboard – View your progress, topics, and recent activities.
+📊 User Tracking – Monitor your progress and performance.
 
-Start Interview – Select topic and difficulty to begin AI-powered Q&A.
+🌐 Web-Friendly UI – Works smoothly on all devices.
 
-Get Feedback – Receive instant AI responses and improvement tips.
+⭐ Nice Preparation – Practice effectively for real interviews.
 
-Track Performance – Analyze results through charts and reports.
-
-Logout – End your session safely and return anytime to continue.
+👤 User-Friendly – Easy navigation and intuitive design.
