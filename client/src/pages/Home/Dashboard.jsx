@@ -20,7 +20,7 @@ const Dashboard = () => {
       const response = await axiosInstance.get(API_PATHS.SESSION.GET_ALL);
       setSessions(response.data);
     } catch (error) {
-      console.error("Error fetching sessions data:", error);
+      console.error("Error fetching session data:", error);
     }
   };
   const deleteSession = async (sessionData) => {};
