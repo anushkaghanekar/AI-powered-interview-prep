@@ -3,12 +3,11 @@ import { UserContext } from '../../context/userContext'
 import Navbar from './Navbar'
 
 const DashboardLayout = ({children}) => {
-    const {user} = useContext(UserContext)
+    const { user, loading } = useContext(UserContext)
     return (
     <div>
         <Navbar/>
-
-        {user && <div>{children}</div>}
+        <div>{children}</div>
     </div>
   )
 }
