@@ -5,7 +5,7 @@ const { protect } = require("../middlewares/authMiddleware.js");
 const router = express.Router();
 
 router.post("/create", protect, createSession);
-router.get("/my-session", protect, getMySessions);
+router.get("/my-sessions", protect, getMySessions);
 router.get("/:id", protect , getSessionById);
 router.delete("/:id", protect, deleteSession);
 
