@@ -6,4 +6,4 @@ const InterviewPrep = () => {
   )
 }
 
-export default InterviewPrep
+export default InterviewPrep;
