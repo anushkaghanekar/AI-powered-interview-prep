@@ -64,20 +64,20 @@ const InterviewPrep = () => {
         }
       />
 
-      <div className=""></div>
-        <h2 className="">Interview Q & A</h2>
+      <DashboardLayout className="container mx-auto pt-4 pb-4 px-4 md:px-0">
+        <h2 className="text-lg font-semibold color-black">Interview Q & A</h2>
 
-        <div className=""></div>
+        <div className="grid grid-cols-12 gap-4 mt-5 mb-10">
           <div
             className={'col-span-12 $
-           {
-            openLeanMoreDrawer ? "md:col-end-7" : "md:col-end-8"
+              {
+               openLeanMoreDrawer ? "md:col-end-7" : "md:col-end-8"
             }'}
-          > 
+          >
             <AnimatePresence>
              {sessionData?.questions?.map((data,index)=> {
                return(
-                
+                <motion.div  
                   key={data._id || index}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -91,13 +91,26 @@ const InterviewPrep = () => {
                   }}
                   layout // This is the key prop thjat animates position changes
                   layoutId={'question-${data._id || index}'} //Helps framer track specific items 
-                
-                  
-                  
-                
-              
-
-    </DashboardLayout>
+                >
+                  <motion.div>
+                    <QuestionCard
+                      question={data?.question}
+                      answer={data?.answer}
+                      onLearnMore={() => 
+                        generateConceptExplanation(data.question)
+                      }
+                      isPinned={data?.isPinned}
+                      onTogglePin={() => toggleQuestionPinStatus(data._id)}
+                    />
+                  </>  
+                </motion.div> 
+              );
+             })}
+            </AnimatePresence> 
+          </div>
+        </div>  
+      </DashboardLayout>
+    
   );
 };
 
