@@ -60,19 +60,18 @@ const InterviewPrep = () => {
         lastUpdated={
           sessionData?.updatedAt
             ? moment(sessionData.updateAt).format("Do MMM YYYY")
-            : ""
+             : ""
         }
       />
-
+    
       <DashboardLayout className="container mx-auto pt-4 pb-4 px-4 md:px-0">
         <h2 className="text-lg font-semibold color-black">Interview Q & A</h2>
 
         <div className="grid grid-cols-12 gap-4 mt-5 mb-10">
           <div
-            className={'col-span-12 $
-              {
+            className={`col-span-12 ${
                openLeanMoreDrawer ? "md:col-end-7" : "md:col-end-8"
-            }'}
+            }`}
           >
             <AnimatePresence>
              {sessionData?.questions?.map((data,index)=> {
@@ -90,7 +89,7 @@ const InterviewPrep = () => {
                     damping: 15,
                   }}
                   layout // This is the key prop thjat animates position changes
-                  layoutId={'question-${data._id || index}'} //Helps framer track specific items 
+                  layoutId={`question-${data._id || index}`} //Helps framer track specific items 
                 >
                   <motion.div>
                     <QuestionCard
@@ -110,7 +109,7 @@ const InterviewPrep = () => {
           </div>
         </div>  
       </DashboardLayout>
-    
+    </DashboardLayout>
   );
 };
 
