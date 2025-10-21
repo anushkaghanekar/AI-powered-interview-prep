@@ -120,13 +120,32 @@ const InterviewPrep = () => {
                       isPinned={data?.isPinned}
                       onTogglePin={() => toggleQuestionPinStatus(data._id)}
                     />
-                </>
+                 </>
                 </motion.div> 
               );
              })}
             </AnimatePresence> 
           </div>
-        </div>  
+        </div>
+
+
+          <div>
+            <Drawer 
+              isOpen={openLeanMoreDrawer}
+              onClose={() => setOpenLeanMoreDrawer(false)}
+              title={!isLoading && explanation?.title}
+            >
+              {errorMsg && (
+                <p className="flex gap-2 text-sm text-amber-600 font-medium">
+                  <LuCircleAlert className="mt-1" /> {errorMsg}
+               </p>
+
+              )}
+              {!isLoading && explanation && (
+                <AIResponsePreview content={explanation?.explanation}/>
+              )}
+            </Drawer>  
+          </div>
       </DashboardLayout>
     </DashboardLayout>
   );
