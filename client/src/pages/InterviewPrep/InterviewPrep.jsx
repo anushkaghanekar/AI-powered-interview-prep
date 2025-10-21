@@ -101,7 +101,7 @@ const InterviewPrep = () => {
                       isPinned={data?.isPinned}
                       onTogglePin={() => toggleQuestionPinStatus(data._id)}
                     />
-                  </>  
+                </>
                 </motion.div> 
               );
              })}

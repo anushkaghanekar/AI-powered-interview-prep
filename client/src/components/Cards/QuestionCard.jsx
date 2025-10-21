@@ -47,23 +47,33 @@ const QuestionCard = ({
                 isExpanded ? "md:flex" : "md:hidden group-hover:flex"
               }`}
             >
-              <button className="" onClick={onTogglePin}>
-                {isPinned ? <LuPinOff className="" /> : <LuPin className="" />}
+              <button
+                className="flex items-center gap-2 text-xs text-indigo-800 font-medium bg-indigo-50 px-1 mr-2 rounded text-nowrap border border-indigo-50 hover:border-indigo-200 cursor-pointer "
+                onClick={onTogglePin}
+              >
+                {isPinned ? (
+                  <LuPinOff className="text-xs" />
+                ) : (
+                  <LuPin className="text-xs" />
+                )}
               </button>
 
               <button
-                className=""
+                className="flex items-center gap-2 text-xs text-cyan-800 font-medium bg-cyan-50 px-3 py-1 mr-2 rounded text-nowrap border border-cyan-50 hover:border-cyan-200 cursor-pointer"
                 onClick={() => {
                   setIsExpanded(true);
                   onLearnMore();
                 }}
               >
                 <LuSparkles />
-                <span className="">Laern More</span>
+                <span className="hidden md:block">Learn More</span>
               </button>
             </div>
 
-            <button className="" onClick={toggleExpand}>
+            <button
+              className="text-gray-400 hover:text-gray-500 cursor-pointer"
+              onClick={toggleExpand}
+            >
               <LuChevronDown
                 size={20}
                 className={`transform transition-transform duration-300 ${
@@ -74,8 +84,16 @@ const QuestionCard = ({
           </div>
         </div>
 
-        <div className="" style={{ maxHeight: `${height}px` }}>
-          <div ref={contentRef} className=""></div>
+        <div
+          className="overflow-hidden transition-all duration-300ease-in-out"
+          style={{ maxHeight: `${height}px` }}
+        >
+          <div
+            ref={contentRef}
+            className="mt-4 text-gray-700 bg-gray-50 px-5 py-3 rounded-lg"
+          >
+            <AIResponsePreview content={answer} />
+          </div>
         </div>
       </div>
     </>
