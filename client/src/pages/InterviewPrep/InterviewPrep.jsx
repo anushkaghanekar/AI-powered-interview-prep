@@ -5,6 +5,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { LuCircleAlert, LuListCollapse } from "react-icons/lu";
 import SpinnerLoader from "../../components/Loader/SpinnerLoader";
 import { toast } from "react-hot-toast";
+import DashboardLayout from '../../components/layouts/dashboardLayout';
+import RoleInfoHeader from './components/RoleInfoHeader';
+import axiosInstance from '../../utils/axiosInstance';
+import { API_PATHS } from '../../utils/apiPaths';
+import QuestionCard from '../../components/Cards/QuestionCard';
+import Drawer from '../../components/Drawer';
+import SkeletonLoader from '../../components/Loader/SkeletonLoader';
+import AIResponsePreview from './components/AIResponsePreview';
 
 const InterviewPrep = () => {
   const { sessionId } = useParams();
