@@ -243,6 +243,6 @@ const InterviewPrep = () => {
       </DashboardLayout>
     </DashboardLayout>
   );
-};
+
 
 export default InterviewPrep
