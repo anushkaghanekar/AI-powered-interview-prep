@@ -30,7 +30,20 @@ const Dashboard = () => {
     }
   };
 
-  const deleteSession = async (sessionData) => {};
+  const deleteSession = async (sessionData) => {
+    try {
+      await axiosInstance.delete(API_PATHS.SESSION.DELETE(sessionData?._id));
+
+      toast.success("Session Deleted Successfully");
+      setOpenDeleteAlert({
+        open: false,
+        data: null,
+      });
+      fetchAllSessions();
+    } catch (error) {
+      console.error("Error deleting session data:", error);
+    }
+  };
 
   useEffect(() => {
     fetchAllSessions();
