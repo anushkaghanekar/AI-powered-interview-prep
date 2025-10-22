@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { CARD_BG } from "../../utils/data";
 import toast from "react-hot-toast";
-import DashboardLayout from '../../components/layouts/DashboardLayout';
-import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../../utils/axiosInstance';
-import { API_PATHS } from '../../utils/apiPaths';
-import SummaryCard from '../../components/Cards/SummaryCard';
-import moment from 'moment';
-import Modal from '../../components/Modal';
-import CreateSessionForm from './CreateSessionForm';
-
+import DashboardLayout from "../../components/layouts/DashboardLayout";
+import { useNavigate } from "react-router-dom";
+import axiosInstance from "../../utils/axiosInstance";
+import { API_PATHS } from "../../utils/apiPaths";
+import SummaryCard from "../../components/Cards/SummaryCard";
+import moment from "moment";
+import Modal from "../../components/Modal";
+import CreateSessionForm from "./CreateSessionForm";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -31,7 +30,7 @@ const Dashboard = () => {
     }
   };
 
-  const deleteSession = async(sessionData) => {};
+  const deleteSession = async (sessionData) => {};
 
   useEffect(() => {
     fetchAllSessions();
@@ -54,40 +53,48 @@ const Dashboard = () => {
                 data?.updatedAt
                   ? moment(data.updatedAt).format("Do MMM YYYY")
                   : ""
-
               }
               onSelect={() => navigate(`/interview-prep/${data?._id}`)}
               onDelete={() => setOpenDeleteAlert({ open: true, data })}
             />
           ))}
         </div>
-        <button 
-          className='h-12 md:h-12 flex items-center justify-center gap-3 bg-linear-to-r from-[#ff9100] to-[#ff6600] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white transition-colors cursor-pointer hover:shadow-2xl hover:shadow-[#ff6200] fixed bottom-10 md:bottom-20 right-10 md:right-20' 
+        <button
+          className="h-12 md:h-12 flex items-center justify-center gap-3 bg-linear-to-r from-[#ff9100] to-[#ff6600] text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-black hover:text-white transition-colors cursor-pointer hover:shadow-2xl hover:shadow-[#ff6200] fixed bottom-10 md:bottom-20 right-10 md:right-20"
           onClick={() => setOpenCreateModal(true)}
-          >
-          <LuPlus className='text-2xl text-white' />
-          Add New 
+        >
+          <LuPlus className="text-2xl text-white" />
+          Add New
         </button>
       </div>
       <Modal
-      isOpen={openCreateModal}
-      onClose={() => {
-        setOpenCreateModal(false);
-      }}
-      hideHeader
+        isOpen={openCreateModal}
+        onClose={() => {
+          setOpenCreateModal(false);
+        }}
+        hideHeader
       >
         <div>
           <CreateSessionForm />
         </div>
       </Modal>
 
+      <Modal
+        isOpen={openDeletealert?.open}
+        onClose={() => {
+          setOpenDeleteAlert({ open: false, data: null });
+        }}
+        title="Delete Alert"
+      >
+        <div className="">
+          <DeleteAlertContent
+            content="Are you sure you want to delete thia session detail?"
+            onDelete={() => deleteSession(openDeletealert.data)}
+          />
+        </div>
+      </Modal>
     </DashboardLayout>
-  )
-}
+  );
+};
 
 export default Dashboard;
-
-
-
-
-
