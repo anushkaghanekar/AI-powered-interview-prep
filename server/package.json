@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -9,16 +9,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "description": "",
   "dependencies": {
-    "@google/genai": "^1.11.0",
-    "bcrypt": "^6.0.0",
+    "@google/genai": "^1.26.0",
+    "@google/generative-ai": "^0.24.1",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.1",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.5",
+    "mongoose": "^8.19.2",
     "multer": "^2.0.2"
   },
   "devDependencies": {

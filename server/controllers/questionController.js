@@ -1,30 +1,28 @@
-const Question = require("../models/Question.js");
-const Session = require("../models/Session.js");
+const Question = require("../models/Question");
+const Session = require("../models/Session");
 
-// @route POST /api/questions/add
-// @access Private
-exports.addQuestionToSession = async (req, res) => {
-    console.log("✅ Reached addQuestionToSession route");
-
+// @desc    Add additional questions to an existing session
+// @route   POST /api/questions/add
+// @access  Private
+exports.addQuestionsToSession = async (req, res) => {
     try {
         const { sessionId, questions } = req.body;
-
-        if (!sessionId || !questions || !Array.isArray(questions)) {
+        if(!sessionId || !questions || !Array.isArray(questions)){
             return res.status(400).json({ message: "Invalid input data" });
         }
 
         const session = await Session.findById(sessionId);
 
-        if (!session) {
+        if(!session){
             return res.status(404).json({ message: "Session not found" });
         }
 
         // Create new questions
         const createdQuestions = await Question.insertMany(
             questions.map((q) => ({
-                sessionId: sessionId, // ✅ correct
+                session: sessionId,
                 question: q.question,
-                answer: q.answer
+                answer: q.answer,
             }))
         );
 
@@ -33,49 +31,52 @@ exports.addQuestionToSession = async (req, res) => {
         await session.save();
 
         res.status(201).json(createdQuestions);
+        
     } catch (error) {
-        console.error("❌ Error in addQuestionToSession:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };
 
-// @desc Pin or unpin a question
-// @route POST /api/questions/:id/pin
-exports.togglePinQuestion =  async(req, res) => {
-    try{
+
+// @desc    Pin or unpin a question
+// @route   POST /api/questions/:id/pin
+// @access  Private
+exports.togglePinQuestion = async (req, res) => {
+    try {
         const question = await Question.findById(req.params.id);
 
         if(!question){
-            return res.status(404).json({ success: false, message: "Question not found"});
+            return res.status(404).json({ success: false, message: "Question not found" });
         }
 
-        questionisPinned = !question.isPinned;
+        question.isPinned = !question.isPinned;
         await question.save();
 
         res.status(200).json({ success: true, question });
-    }catch(error){
-        res.status(500).json({message: "Server Error"});
+    } catch (error) {
+        res.status(500).json({ message: "Server Error"});
     }
 };
 
-// @desc Pin or unpin a question
-// @route POST /api/questions/:id/pin
-// @access Private
+
+// @desc    Update a note for a question
+// @route   POST /api/questions/:id/note
+// @access  Private
 exports.updateQuestionNote = async (req, res) => {
-    try{
+    try {
         const { note } = req.body;
         const question = await Question.findById(req.params.id);
-        
+
         if(!question){
-            return res.status(404).json({ success: false, message: "Question Not Found"});
+            return res.status(404).json({ success: false, message: "Question not found" });
         }
 
         question.note = note || "";
         await question.save();
 
-        res.status(200).json({ success : true, question });
+        res.status(200).json({ success: true, question });
+    } catch (error) {
+        res.status(500).json({ message: "Server Error"});
     }
-    catch(error){
-        res.status(500).json({ message: "Server Error" });
-    }
+
 };

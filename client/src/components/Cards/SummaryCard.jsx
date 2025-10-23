@@ -1,6 +1,6 @@
 import React from 'react'
-import { LuTrash2 } from "react-icons/lu";
-import { getInitials } from "../../utils/helper";
+import { LuTrash2 } from 'react-icons/lu';
+import { getInitials } from '../../utils/helper';
 
 const SummaryCard = ({
     colors,
@@ -13,7 +13,7 @@ const SummaryCard = ({
     onSelect,
     onDelete,
 }) => {
-  return <div className='bg-white border border-gray-300/40 rounded-xl p-2 overflow-hidden cursor-pointer hover:shadow-xl shadow-gray-100 relative group' onClick={onSelect}>
+    return <div className='bg-white border border-gray-300/40 rounded-xl p-2 overflow-hidden cursor-pointer hover:shadow-xl shadow-gray-100 relative group' onClick={onSelect}>
         <div className='rounded-lg p-4 cursor-pointer relative' style={{ background: colors.bgcolor, }}>
 
             <div className='flex items-start'>
