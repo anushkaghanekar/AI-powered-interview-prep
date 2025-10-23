@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { LuPlus } from "react-icons/lu";
 import { CARD_BG } from "../../utils/data";
 import toast from "react-hot-toast";
@@ -70,7 +70,6 @@ const Dashboard = () => {
                 data?.updatedAt
                   ? moment(data.updatedAt).format("Do MMM YYYY")
                   : ""
-
               }
               onSelect={() => navigate(`/interview-prep/${data?._id}`)}
               onDelete={() => setOpenDeleteAlert({ open: true, data })}
@@ -84,11 +83,11 @@ const Dashboard = () => {
       </div>
 
       <Modal
-      isOpen={openCreateModal}
-      onClose={() => {
-        setOpenCreateModal(false);
-      }}
-      hideHeader
+        isOpen={openCreateModal}
+        onClose={() => {
+          setOpenCreateModal(false);
+        }}
+        hideHeader
       >
         <div>
           <CreateSessionForm />
