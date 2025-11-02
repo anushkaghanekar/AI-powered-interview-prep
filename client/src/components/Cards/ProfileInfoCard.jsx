@@ -19,7 +19,7 @@ const ProfileInfoCard = () => {
     const profileImage = user?.profileImageUrl
         ? user.profileImageUrl.startsWith("http")
             ? user.profileImageUrl
-            : `${backendURL}${user.profileImageUrl}`
+            : `${backendURL}/${user.profileImageUrl}`
         : "https://via.placeholder.com/150"; // fallback image
 
     return (
