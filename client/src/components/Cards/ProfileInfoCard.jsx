@@ -12,18 +12,22 @@ const ProfileInfoCard = () => {
         navigate("/");
     };
 
+    // your backend Render URL (change this to your backend one)
+    const backendURL = "https://ai-powered-interview-prep-api.onrender.com";
+
+    // full image URL
+    const profileImage = user?.profileImageUrl
+        ? user.profileImageUrl.startsWith("http")
+            ? user.profileImageUrl
+            : `${backendURL}${user.profileImageUrl}`
+        : "https://via.placeholder.com/150"; // fallback image
+
     return (
         user && (
             <div className='flex items-center'>
                 <img
-                    src={
-                        user.profileImageUrl
-                            ? user.profileImageUrl.startsWith("http")
-                                ? user.profileImageUrl
-                                : `https://ai-powered-interview-prep-api.onrender.com/${user.profileImageUrl.replace(/^\//, "")}`
-                            : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                    }
-                    alt=""
+                    src={profileImage}
+                    alt="Profile"
                     className='w-11 h-11 bg-gray-300 rounded-full mr-3 object-cover'
                 />
                 <div>
@@ -39,19 +43,10 @@ const ProfileInfoCard = () => {
                 </div>
             </div>
         )
-    )
-}
+    );
+};
 
-export default ProfileInfoCard
-
-
-
-
-
-
-
-
-
+export default ProfileInfoCard;
 
 
 
