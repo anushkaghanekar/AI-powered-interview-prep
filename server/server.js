@@ -20,7 +20,7 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-
+console.log("JWT_SECRET:", process.env.JWT_SECRET ? "Loaded ✅" : "Missing ❌");
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/sessions", sessionRoutes);
